@@ -1,22 +1,28 @@
 /**
- * Main angular js web application
+ * AngularJS Tutorial 1
+ * @author Nick Kaye <nick.c.kaye@gmail.com>
+ */
+
+/**
+ * Main AngularJS Web Application
  */
 var app = angular.module('tutorialWebApp', [
   'ngRoute'
-  ]);
+]);
 
 /**
- * Angular js routes
+ * Configure the Routes
  */
-
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
-    // home
+    // Home
     .when("/", {templateUrl: "partials/home.html", controller: "PageCtrl"})
-    // pages
+    // Pages
     .when("/about", {templateUrl: "partials/about.html", controller: "PageCtrl"})
     .when("/faq", {templateUrl: "partials/faq.html", controller: "PageCtrl"})
-    /* etc… routes to other pages… */
+    .when("/pricing", {templateUrl: "partials/pricing.html", controller: "PageCtrl"})
+    .when("/services", {templateUrl: "partials/services.html", controller: "PageCtrl"})
+    .when("/contact", {templateUrl: "partials/contact.html", controller: "PageCtrl"})
     // Blog
     .when("/blog", {templateUrl: "partials/blog.html", controller: "BlogCtrl"})
     .when("/blog/post", {templateUrl: "partials/blog_item.html", controller: "BlogCtrl"})
